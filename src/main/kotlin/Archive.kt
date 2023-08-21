@@ -3,7 +3,7 @@ class Archive(val nameArchive: String) {
     init {
         println("Создан архив с именем $nameArchive")
     }
-    fun addNote(note: String) {
-        listNotes.add(Note(note))
+    fun addNote(nameNote: String, textNote: String) {
+        listNotes.add(Note(nameNote,textNote))
     }
 }

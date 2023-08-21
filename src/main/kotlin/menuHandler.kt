@@ -19,7 +19,7 @@ class MenuHandler {
         while (true) {
             println("0. Создать заметку")
             for ((index, notes) in listArchives[pos-1].listNotes.withIndex()) {
-                println("${index + 1}. ${notes.textNote}")
+                println("${index + 1}. ${notes.nameNote}")
             }
             println("${listArchives[pos-1].listNotes.size+1}. Назад")
             selectMenuNote = getTheCommandForList(listArchives[pos-1].listNotes)
@@ -33,6 +33,7 @@ class MenuHandler {
 
     private fun openNote(archive: Archive,pos: Int){
         while (true){
+            println("Заметка ${archive.listNotes[pos].nameNote}:")
             println (archive.listNotes[pos].textNote)
             println("1. Назад")
             if (getTheCommandForList(archive.listNotes)==1) break
@@ -40,9 +41,11 @@ class MenuHandler {
     }
 
     private fun createNewNote(archive: Archive) {
-        println("Введите имя новую заметку")
-        val note = scanner.nextLine()
-        archive.addNote(note)
+        println("Введите имя новой заметки")
+        val nameNote = scanner.nextLine()
+        println("Введите текст заметки")
+        val textNote = scanner.nextLine()
+        archive.addNote(nameNote,textNote)
     }
 
     private fun showMainMenu() {

@@ -1,5 +1,5 @@
-class Note(val textNote: String) {
+class Note(val nameNote: String,val textNote: String) {
     init {
-        println("Создана заметка $textNote")
+        println("Создана заметка $nameNote")
     }
 }
