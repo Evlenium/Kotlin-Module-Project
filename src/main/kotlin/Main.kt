@@ -1,3 +1,5 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
+    println("Добро пожаловать в программу заметки")
+    val menuHandler = MenuHandler()
+    menuHandler.menuSelection(Screen.MainMenu)
 }
